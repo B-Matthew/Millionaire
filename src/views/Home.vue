@@ -2,8 +2,8 @@
   <div class="home">
     <div class="myContainer">
       <ul>
-        <li><h1>{{domande[2].domanda}}</h1></li>
-        <li v-for="risp in domande[2].risposte" v-on:click="getStatus(risp)">{{risp.name}}</li>
+        <li><h1>{{domande[1].domanda}}</h1></li>
+        <li v-for="risp in domande[1].risposte" v-on:click="getStatus(risp)" :style="val">{{risp.name}}</li>
       </ul>
     </div>
   </div>
@@ -122,18 +122,22 @@ export default {
               },
           }
         },
-      ]
+      ],
+      val: ''
     }
   },
   methods: {
     getStatus: function (risp) {
       let status = risp.status;
       if (status) {
-        alert('GIUSTO');
+        this.val = 'background-color:green;'
       } else {
-        alert('SBAGLIATO');
+        this.val = 'background-color:red;'
       }
     }
   }
 };
 </script>
+     
+
+    

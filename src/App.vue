@@ -73,4 +73,13 @@
     }
   }
 }
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
 </style>
+        
