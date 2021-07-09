@@ -76,10 +76,12 @@
 
 .green {
   background-color: green;
+  transition: 1s;
 }
 
 .red {
   background-color: red;
+  transition: 1s;
 }
 </style>
         

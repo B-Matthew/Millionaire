@@ -2,8 +2,8 @@
   <div class="home">
     <div class="myContainer">
       <ul>
-        <li><h1>{{domande[1].domanda}}</h1></li>
-        <li v-for="risp in domande[1].risposte" v-on:click="getStatus(risp)" :style="val">{{risp.name}}</li>
+        <li><h1>{{domande[4].domanda}}</h1></li>
+        <li v-for="(risp,index) in domande[4].risposte" v-on:click="getStatus()" :class="{'green': risp.status && val == true,'red': !risp.status && val == true}" >{{risp.name}}</li>
       </ul>
     </div>
   </div>
@@ -20,19 +20,19 @@ export default {
         {
           domanda : 'Chi è il più bello del mondo?',
           risposte : {
-            1: {
+            0: {
               name: 'Matthew',
               status: true,
               },
-            2: {
+            1: {
               name: 'Sara',
               status: false,
               },
-            3: {
+            2: {
               name: 'Brian',
               status: false,
               },
-            4: {
+            3: {
               name: 'Kevin',
               status: false,
               },
@@ -41,19 +41,19 @@ export default {
         {
           domanda : 'Chi è il più forte del mondo?',
           risposte : {
-            1: {
+            0: {
               name: 'Matthew',
               status: true,
               },
-            2: {
+            1: {
               name: 'Sara',
               status: false,
               },
-            3: {
+            2: {
               name: 'Brian',
               status: false,
               },
-            4: {
+            3: {
               name: 'Kevin',
               status: false,
               },
@@ -62,19 +62,19 @@ export default {
         {
           domanda : 'Chi è il più effemminato del mondo?',
           risposte : {
-            1: {
+            0: {
               name: 'Matthew',
               status: true,
               },
-            2: {
+            1: {
               name: 'Simone',
               status: false,
               },
-            3: {
+            2: {
               name: 'Mirko',
               status: false,
               },
-            4: {
+            3: {
               name: 'Alfonso',
               status: false,
               },
@@ -83,6 +83,10 @@ export default {
         {
           domanda : 'Chi è il più forte a Macchiavelli?',
           risposte : {
+            0: {
+              name: 'Matthew',
+              status: true,
+              },
             1: {
               name: 'Matthew',
               status: true,
@@ -92,10 +96,6 @@ export default {
               status: true,
               },
             3: {
-              name: 'Matthew',
-              status: true,
-              },
-            4: {
               name: 'Matthew',
               status: true,
               },
@@ -104,40 +104,43 @@ export default {
         {
           domanda : 'Chi è il più grasso del mondo?',
           risposte : {
-            1: {
+            0: {
               name: 'Lori',
               status: true,
               },
-            2: {
+            1: {
               name: 'Sara',
               status: false,
               },
-            3: {
+            2: {
               name: 'Michela',
               status: false,
               },
-            4: {
+            3: {
               name: 'Broni',
               status: false,
               },
           }
         },
       ],
-      val: ''
+      val: false,
+     
     }
   },
   methods: {
-    getStatus: function (risp) {
-      let status = risp.status;
-      if (status) {
-        this.val = 'background-color:green;'
-      } else {
-        this.val = 'background-color:red;'
-      }
+    getStatus: function () {
+      this.val = !this.val;
     }
   }
 };
 </script>
+      
+      
+  
+     
+      
+      
+        
      
 
     
